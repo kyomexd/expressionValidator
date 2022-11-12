@@ -1,5 +1,7 @@
 package TestTaskForMentoring;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.Scanner;
 
 public class FinancialCalc {
@@ -18,9 +20,9 @@ public class FinancialCalc {
 
                                                 if (inputData.ifCalculable()) {
                                                         double result = answered.calc();
-                                                        int value = (int) Math.round(result);
-                                                        result = Math.floor(value);
-                                                        System.out.println(result);
+                                                        BigDecimal value = new BigDecimal(result);
+                                                        value = value.setScale(1, RoundingMode.HALF_EVEN);
+                                                        System.out.println(value);
 
                                                 } else throw new ArithmeticException("Input incalculable");
                                         } else throw new ArithmeticException("This software only supports human or business as clients");
