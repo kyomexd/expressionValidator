@@ -8,11 +8,23 @@ package TestTaskForMentoring;
         String IR = data[2];
         String client = data[3];
 
-        public boolean ifPositive() {
+        public boolean ifPositiveSumCred() {
             double a = Double.parseDouble(sumCredited);
+            return a>0;
+        }
+
+        public boolean ifPositiveMonPay() {
             double b = Double.parseDouble(monPayment);
+            return b>0;
+        }
+
+        public boolean ifPositiveIR() {
             double c = Double.parseDouble(IR);
-            return a > 0 && b > 0 && c > 0 && client.equals("human") || client.equals("business");
+            return c>0;
+        }
+
+        public boolean ifCorrectHumanBus() {
+            return client.equals("human") || client.equals("business");
         }
 
         public boolean ifCalculable() {
@@ -21,10 +33,7 @@ package TestTaskForMentoring;
             double c = Double.parseDouble(IR);
             c = c / 100;
             a = a * c;
-            return !(12 * b <= a);
+            return !(12 * b < a);
         }
 
-        public boolean HorB() {
-            return client.equals("human");
-        }
     }
