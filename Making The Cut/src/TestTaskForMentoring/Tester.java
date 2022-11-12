@@ -23,7 +23,7 @@ public boolean ifPositiveSumCred() {
             double c = Double.parseDouble(IR);
             c = c / 100;
             a = a * c;
-            return !(12 * b <= a);
+            return !(12 * b < a);
         }
 
     }
