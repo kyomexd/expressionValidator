@@ -17,7 +17,9 @@ public class FinancialCalc {
 
 
                                                 if (inputData.ifCalculable()) {
-                                                        double result = Math.floor(answered.calc());
+                                                        double result = answered.calc();
+                                                        int value = (int) Math.round(result);
+                                                        result = Math.floor(value);
                                                         System.out.println(result);
 
                                                 } else throw new ArithmeticException("Input incalculable");
