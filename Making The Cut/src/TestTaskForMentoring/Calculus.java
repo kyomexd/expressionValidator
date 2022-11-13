@@ -6,45 +6,24 @@ public class Calculus {
     String sumCredited = data[0];
     String monPayment = data[1];
     String IR = data[2];
+    String client = data[3];
 
-    public double calcForHuman() {
+    public double calc() {
         double a = Double.parseDouble(sumCredited);
         double b = Double.parseDouble(monPayment);
         double c = Double.parseDouble(IR);
-        double OGSum = a;
         c = c / 100 + 1;
         b = 12 * b;
-        int i = 0;
-        double res;
-        while (a*c>b) {
+        double res = 0;
+        if (client.equals("human")) {
+            res += a * (c - 1);
             a = a * c;
+        }
+        while (a>b) {
             a = a - b;
-            i++;
-        }
-        if (a>0) {
+            res += a * (c-1);
             a = a * c;
         }
-        else {
-            a = a * (-1);
-        }
-        res = b * i + a - OGSum;
-        return res;
-    }
-    public double calcForBusiness() {
-        double a = Double.parseDouble(sumCredited);
-        double b = Double.parseDouble(monPayment);
-        double c = Double.parseDouble(IR);
-        double OGSum = a;
-        c = c / 100 + 1;
-        b = 12 * b;
-        int i = 0;
-        double res;
-        while (a > b) {
-            a = a - b;
-            a = a * c;
-            i++;
-        }
-        res = b * i + a - OGSum;
         return res;
     }
 
