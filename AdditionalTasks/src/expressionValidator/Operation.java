@@ -1,6 +1,6 @@
 package expressionValidator;
 
-public abstract class Operations {
+public abstract class Operation {
     private int priority;
 
     abstract String calculate(String expression);
