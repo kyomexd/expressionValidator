@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class Multiplication extends Operations{
+public class Multiplication extends Operation{
     private int priority = 2;
 
     @Override
