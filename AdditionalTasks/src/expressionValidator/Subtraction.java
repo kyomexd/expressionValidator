@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class Subtraction extends Operations{
+public class Subtraction extends Operation{
     @Override
     String calculate(String expression) {
         int result = 0;
