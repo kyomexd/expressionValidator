@@ -1,13 +1,8 @@
 package expressionValidator;
 
-public class Operations {
+public abstract class Operations {
+    private int priority;
 
-    public static int applyOp(char op, int b, int a) {
-        return switch (op) {
-            case '+' -> a + b;
-            case '-' -> a - b;
-            case '*' -> a * b;
-            default -> 0;
-        };
-    }
+    abstract String calculate(String expression);
+    abstract String solveExpressions(String expression);
 }
